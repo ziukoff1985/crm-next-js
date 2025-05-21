@@ -1,9 +1,12 @@
+import ActiveLabel from './components/active-label';
+import NotActiveLabel from './components/not-active-label';
+
 export default function Home() {
   return (
     <main>
       <h1>Home Page</h1>
-      <h2>Welcome to CRM Next.js</h2>
-      <p>This is the main page of your CRM application.</p>
+      <ActiveLabel>Active</ActiveLabel>
+      <NotActiveLabel>Not Active</NotActiveLabel>
     </main>
   );
 }
