@@ -46,7 +46,7 @@ export default function Sidebar({}: SidebarProps) {
           </SidebarItem>
         </ul>
         <button
-          className="mx-auto mt-auto flex items-center gap-2 p-6"
+          className="mx-auto mt-auto flex cursor-pointer items-center gap-2 p-6"
           onClick={handleExitClick}
         >
           <Image
