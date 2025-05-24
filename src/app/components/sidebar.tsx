@@ -1,16 +1,27 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import SidebarItem from '@/app/components/sidebar-item';
+import { usePathname, useRouter } from 'next/navigation';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface SidebarProps {}
 
 export default function Sidebar({}: SidebarProps) {
+  const router = useRouter(); // хук для навігації
+  const pathname = usePathname(); // хук для отримання поточного шляху
+
+  // handleExitClick - функція для обробки натискання на кнопку "Exit"
+  // Вона перенаправляє користувача на головну сторінку
+  const handleExitClick = () => {
+    router.push('/');
+  };
   return (
-    <aside className="fixed top-0 left-0 z-40 w-60 h-screen">
-      <div className="flex flex-col h-full overflow-y-auto bg-gray-900">
+    <aside className="fixed top-0 left-0 z-40 h-screen w-60">
+      <div className="flex h-full flex-col overflow-y-auto bg-gray-900">
         <Image
-          className="py-8 mb-11 mx-auto"
+          className="mx-auto mb-11 py-8"
           width={122}
           height={25}
           src="/icons/logo.svg"
@@ -18,6 +29,7 @@ export default function Sidebar({}: SidebarProps) {
         />
         <ul className="space-y-7">
           <SidebarItem
+            current={pathname === '/dashboard'}
             pathname="/dashboard"
             src="/icons/squares.svg"
             alt="dashboard icon"
@@ -25,6 +37,7 @@ export default function Sidebar({}: SidebarProps) {
             Dashboard
           </SidebarItem>
           <SidebarItem
+            current={pathname === '/companies'}
             pathname="/companies"
             src="/icons/briefcase.svg"
             alt="companies icon"
@@ -32,7 +45,10 @@ export default function Sidebar({}: SidebarProps) {
             Companies
           </SidebarItem>
         </ul>
-        <button className="flex items-center gap-2 p-6 mt-auto mx-auto">
+        <button
+          className="mx-auto mt-auto flex items-center gap-2 p-6"
+          onClick={handleExitClick}
+        >
           <Image
             width={18}
             height={18}
