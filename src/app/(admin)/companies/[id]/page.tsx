@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '@/app/components/header';
+// import Header from '@/app/components/header';
 
 // Компонент відрізняється він прикладу в курсі Next.js
 // використовуємо асинхронну функцію для отримання параметрів сторінки.
@@ -16,8 +16,8 @@ export default async function Page(props: Props) {
   const { id } = await props.params;
 
   return (
-    <>
-      <Header>Company ({id})</Header>
-    </>
+    <div className="px-10 py-6">
+      <p>{`Information about company (${id})`}</p>
+    </div>
   );
 }
