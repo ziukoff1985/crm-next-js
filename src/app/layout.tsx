@@ -9,7 +9,7 @@ export const metadata = {
   title: 'CRM App',
   description: 'Manage your companies and promotions with ease',
   icons: {
-    icon: '/upload.svg', // або .svg / .png — залежно від формату
+    icon: '/nextjs-icon.svg', // або .svg / .png — залежно від формату
   },
 };
 
