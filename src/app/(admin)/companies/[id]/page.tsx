@@ -1,5 +1,4 @@
 import React from 'react';
-// import Header from '@/app/components/header';
 
 // Компонент відрізняється він прикладу в курсі Next.js
 // використовуємо асинхронну функцію для отримання параметрів сторінки.
