@@ -1,4 +1,6 @@
 import React from 'react';
+import { Company, getCompany } from '@/lib/api';
+import getQueryClient from '@/lib/utils/getQueryClient';
 import Header from '@/app/components/header';
 
 // Компонент відрізняється він прикладу в курсі Next.js
@@ -15,5 +17,15 @@ type Props = {
 export default async function Page({ params }: Props) {
   const { id } = await params;
 
-  return <Header>{`Company (${id})`}</Header>;
+  const queryClient = getQueryClient();
+
+  await queryClient.prefetchQuery({
+    queryKey: ['companies', id],
+    queryFn: () => getCompany(id, { cache: 'no-store' }),
+    staleTime: 10 * 1000,
+  });
+
+  const company = queryClient.getQueryData(['companies', id]) as Company;
+
+  return <Header>{company?.title}</Header>;
 }
