@@ -5,6 +5,14 @@ import './globals.css';
 
 const font = Plus_Jakarta_Sans({ subsets: ['latin'] });
 
+export const metadata = {
+  title: 'CRM App',
+  description: 'Manage your companies and promotions with ease',
+  icons: {
+    icon: '/upload.svg', // або .svg / .png — залежно від формату
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
