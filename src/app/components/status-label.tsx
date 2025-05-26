@@ -6,6 +6,7 @@ import { CompanyStatus } from '@/lib/api';
 export interface StatusLabelProps {
   status: CompanyStatus;
   disabled?: boolean;
+  styled?: boolean;
 }
 
 const labelByStatus = {
@@ -15,7 +16,13 @@ const labelByStatus = {
   [CompanyStatus.Suspended]: 'Suspended',
 };
 
-export default function StatusLabel({ status, disabled }: StatusLabelProps) {
+export default function StatusLabel({
+  status,
+  disabled,
+  styled = true,
+}: StatusLabelProps) {
+  const label = labelByStatus[status];
+  if (!styled) return <>{label}</>;
   return (
     <div
       // clsx - для динамічного формування класів -> класи конкатенуються
@@ -31,7 +38,7 @@ export default function StatusLabel({ status, disabled }: StatusLabelProps) {
       )}
     >
       <div className="mr-2 h-1 w-1 rounded-full bg-current"></div>
-      {labelByStatus[status]}
+      {label}
     </div>
   );
 }

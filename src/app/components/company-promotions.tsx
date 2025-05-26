@@ -20,8 +20,8 @@ export default function CompanyPromotions({
 
   return (
     <div className="grid grid-cols-12 gap-5">
-      {data?.map((promotion) => (
-        <div key={promotion.id} className="col-span-4">
+      {data?.map((promotion, index) => (
+        <div key={`${promotion.id}-${index}`} className="col-span-4">
           <Promotion promotion={promotion} />
         </div>
       ))}
