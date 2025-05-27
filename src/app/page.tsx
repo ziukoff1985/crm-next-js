@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+// Головна сторінка додатку
 export default function Home() {
   return (
     <main className="relative min-h-[100dvh] overflow-hidden bg-gradient-to-br from-sky-900 via-sky-800 to-sky-950 text-white">

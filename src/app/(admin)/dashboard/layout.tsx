@@ -9,6 +9,11 @@ export interface LayoutProps {
   promotions: React.ReactNode;
 }
 
+// Головний компонент макету dashboard
+// Використовується для обгортання всіх сторінок та компонентів dashboard
+// children — це те, що буде вставлено всередину layout, залежно від того, який маршрут відкрито.
+// stats, sales, categories, countries, promotions — це компоненти, які будуть відображені на сторінці dashboard
+// Коли користувач відкриє /admin/dashboard -> Підключиться layout.tsx із (admin) -> У children вставить вміст dashboard/page.tsx
 export default function Layout({
   children,
   stats,

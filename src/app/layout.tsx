@@ -13,6 +13,8 @@ export const metadata = {
   },
 };
 
+// Головний компонент макету додатку
+// Використовується для обгортання всіх сторінок та компонентів
 export default function RootLayout({
   children,
 }: Readonly<{

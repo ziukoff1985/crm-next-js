@@ -7,6 +7,8 @@ import CompanyTable from '@/app/components/company-table';
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface PageProps {}
 
+// Головна сторінка для перегляду компаній
+// Використовується для відображення таблиці компаній
 export default async function Page({}: PageProps) {
   const queryClient = getQueryClient();
 

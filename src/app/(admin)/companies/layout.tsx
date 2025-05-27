@@ -7,6 +7,8 @@ export interface LayoutProps {
   modal: React.ReactNode;
 }
 
+// Головний компонент макету для сторінок в адмінці
+// Використовується для обгортання всіх сторінок та компонентів адмінки
 export default function Layout({
   children,
   header,
